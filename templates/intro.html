@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intro</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='intro1.css')}}">
+</head>
+<body>
+    <div class="introduce">
+        <h1>STUDENT DATABASE MANAGEMENT SYSTEM</h1>
+        <p>In This project ,we had created a database to store details of student.<br>
+           We designed in way,such that staff can only add delete and<br> update student details based on their needs,
+           and <br>also students only see their own details ,that helps to protect the database safe and secure.</p></div>
+           <a href="{{ url_for('login') }}"><button style="font-size: 20px;background-color: transparent;">STAFF LOGIN</button></a>
+           <a href="{{ url_for('login_student') }}"><button style="font-size: 20px; margin-left: 100px;background-color: transparent;">STUDENT LOGIN</button></a><br>
+    
+    
+</body>
+</html>

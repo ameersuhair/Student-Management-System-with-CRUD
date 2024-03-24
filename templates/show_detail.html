@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Details</title>
+</head>
+<body>
+    
+    <form id="myform" action="/show_detail" method="get">
+        <h1>Show Student Details</h1>
+        <label for="filter"style="font-size: 25px ;font-style: italic;">Department Name</label><br>
+        <select name="filter" id="filter">
+            <option value="">Default</option>
+            <option value="CSE">CSE</option>
+            <option value="MECH">MECH</option>
+            <option value="Civil">Civil</option>
+            <option value="EEE">EEE</option>
+            <option value="ECE">ECE</option>
+        </select>
+        <br>
+        <label for="sort_col" style="font-size: 25px ;font-style: italic;">Sort By:</label>
+        <br>
+        <select name="sort_col" id="sort_col">
+            <option value="">Default</option>
+            <option value="name">Name</option>
+            <option value="reg_number">Register Number</option>
+        </select>
+        <br>
+        <label for="sort_order" style="font-size: 25px ;font-style: italic;">Choose The order:</label><br>
+        <select name="sort_order" id="sort_order">
+            <option value="">Default</option>
+            <option value="ASC">Ascending</option>
+            <option value="DESC">Descending</option>
+        </select><br><br>
+
+        <button type="submit" style="font-size: 15px;">Submit</button><br><br>
+        <a href="{{ url_for('home') }}"><button style="font-size: 15px;font-style: italic;">Go back</button></a>
+    </form>
+        <h2>Students Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Register Number</th>
+                <th>Age</th>
+                <th>Department</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in data %}
+                <tr>
+                    <td>{{ student[1] }}</td>
+                    <td>{{ student[2] }}</td>
+                    <td>{{ student[3] }}</td>
+                    <td>{{ student[4] }}</td>
+                    <td><a href="{{ url_for('update_student', student_id=student[0]) }}"><button>UPDATE</button></a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+<style>
+    
+   
+   @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+   body {
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+       height: 100vh;
+       margin: 0;
+ 
+ font-family : "Roboto", sans-serif;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ opacity: 1;
+ margin: 0;
+}
+h1 ,h2, label,button{
+ color:#fff;
+
+text-shadow: 0px 60px 70px
+}
+#myform {
+ width: 380px;
+ padding: 100% 0 0;
+ margin: auto;
+ 
+ margin-top: -31px;
+margin-bottom: 26px;
+
+
+}
+
+#myform {
+   
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+ border-radius: 25px;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ z-index: 1;
+ margin:auto;
+ padding: 50px 50px 50px ;
+ text-align: center;
+ box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+ max-width : 400px;
+}
+#myform select{
+ font-family: "Roboto", sans-serif;
+ outline: 0;
+ background: #f8f2f2;
+ width: 100%;
+ border: 0;
+ margin: 0 0 15px;
+ padding: 15px;
+ box-sizing: border-box;
+ font-size: 14px;
+ border: 2px solid #f8f2f2;
+ border-radius:  12px;
+}
+button{
+ border: 3px solid #f8f2f2;
+ border-radius:  12px;
+ padding: 10px;
+ color: rgb(13, 13, 14);
+
+ background: transparent;
+ transition: all.2s ease-in-out; 
+}
+button:hover{
+  background-color: #ffb199 ;
+  transform: scale(1.2);
+}
+</style>
+</html>
+

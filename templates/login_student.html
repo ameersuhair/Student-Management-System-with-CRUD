@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='login_student1.css')}}">
+</head>
+<body>
+    <div class="toorder">
+    <h1>STUDENTS VIEW</h1>
+    <form action="/login_student" method="get">
+    <label for="regNum" >REGISTER NO</label><br>
+    <input type="number" id="regNum" name="regNum"minlength="12" maxlength="12">
+    <br> 
+    <button type="submit">SUBMIT</button>
+    <br>
+    </form>
+    <a href="{{ url_for('intro') }}"><button style="font-size: 15px;font-style: italic;">Go back</button></a>
+    </div>
+    <div class="show">
+        <h2>Students Details</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Register Number</th>
+                    <th>Age</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in data %}
+                    <tr>
+                        <td>{{ student[1] }}</td>
+                        <td>{{ student[2] }}</td>
+                        <td>{{ student[3] }}</td>
+                        <td>{{ student[4] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+        {% if error_msg %}
+        <p>{{error_msg}}</p>
+        {% endif %} 
+</body>
+</html>

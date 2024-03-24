@@ -1,0 +1,23 @@
+body{
+    background-image: url('bg1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-family: sans-serif;
+    -webkit-text-fill-color:rgb(14, 156, 161);
+}
+.getting{
+    width: 300px;
+    height: auto;
+    border: 4px solid rgb(14, 156, 161);
+    padding: 20px 20px ; 
+    margin: auto;
+}
+.show{
+    -webkit-text-fill-color:rgb(14, 156, 161);
+    width: 500px;
+    height: auto;
+    border: 4px solid rgb(14, 156, 161);
+    padding: 20px 20px ; 
+    margin: auto;
+}

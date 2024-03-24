@@ -1,0 +1,11 @@
+body{
+    background-image: url("fro.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-text-fill-color: rgb(red, green, blue);
+    font-size: 30px;
+    text-align: center;
+    margin-left: 250px;
+    margin-right: 250px;
+    
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='add_student1.css')}}">
+</head>
+<body>
+    <h1>Student Information</h1>
+    {% if error_msg %}
+    <p class="error_msg">{{ error_msg }}</p>
+    {% endif %}
+
+    <div class="total">
+    <form action="/add_student" method="post">
+     <label for="name">Name:</label><br>
+     <input type="text" id="name" name="name" required>
+     <br>
+     <label for="regNum">Register Number:</label><br>
+     <input type="text" id="regNum" name="regNum" required>
+     <br>
+     <label for="age">Age:</label><br>
+     <input type="number" id="age" name="age" required>
+    <br><br>
+    <label for="department">Department:</label><br>
+    <select name="department">
+        <option value="CSE">CSE</option>
+        <option value="MECH">MECH</option>
+        <option value="Civil">CIVIL</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+    </select><br><br>
+
+     <button type="submit" style="font-size: 15px;">Add Student</button>
+    </form>
+    
+    <a href="{{ url_for('home') }}" style="font-size: 15px;">Go to Home Page</a>
+    </div>
+ </body> 
+</html>

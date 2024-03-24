@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Create New Account</h1>
+      <form action="{{ url_for('signup') }}" method="post">
+        {% if error_msg %}
+          <p class="error-msg">{{ error_msg }}</p>
+        {% endif %}
+        
+        <input type="text" id="name" name="name" required placeholder="Username"><br /><br/>
+
+        <input type="password" id="password" name="password" required  placeholder="Password"/><br /><br>
+        <button type="submit">Create Account</button>
+      </form>
+    </div>
+  </body>
+</html>
+<style>
+body {
+    background-color: #072f3b;
+  background-image: linear-gradient(45deg,#0a1dc7,#328f8a);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  opacity: 1;
+  }
+  
+  .container {
+    top: 100%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    position:relative;
+    width: 330px;
+    padding: 8% 0 0;
+    margin: 0 auto 100px;
+    z-index: 1;
+    padding: 50px;
+    justify-content:center;
+
+    background-image:linear-gradient(45deg,#0a1dc7,#328f8a);
+    max-width: 360px;
+    padding: 45px;
+    text-align: center;
+ 
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+   
+    cursor: pointer;
+    border-radius: 40px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.container input{
+    border: 2px solid #fff;
+  padding: 10px;
+  border-radius: 50px 20px;
+}
+
+.error-msg{
+  color: red;
+  margin-bottom: 10px;
+}
+</style>

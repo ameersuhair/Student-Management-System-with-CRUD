@@ -1,0 +1,25 @@
+body{
+    text-align: center;
+    font-size: 20px;
+    -webkit-text-fill-color:black ;
+    background-image: url('front1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: color;
+}
+.log{
+    box-shadow: 2px;
+    text-align: center;
+    margin-top: 170px;
+    margin-left: 500px;
+    height: auto;
+    width: 350px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 10px;
+    padding: 10px ;
+}
+#name,#pass{
+    background-color: transparent;
+    border-radius: 10px;
+    width: 200px;
+}

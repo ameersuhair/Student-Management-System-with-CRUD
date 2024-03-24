@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student Details</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='update_student1.css')}}">
+</head>
+<body>
+    <br>
+    <h1 style="text-align: center;-webkit-text-fill-color:black;">Update Student Details</h1><br>
+
+    <div class="update-form">
+        <form action="{{ url_for('update_student', student_id=student[0]) }}" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" value="{{ student[1] }}"><br><br>
+
+            <label for="regNum">Register Number:</label><br>
+            <input type="text" id="regNum" name="regNum" value="{{ student[2] }}"><br><br>
+
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age" value="{{ student[3] }}"><br><br>
+
+            <label for="department">Department:</label><br>
+            <input type="text" id="department" name="department" value="{{ student[4] }}"><br><br>
+
+            <button type="submit" style="text-align: center; width: 100px; border-radius: 10px;background-color: transparent;">Update</button><br>
+        </form>
+
+        <a href="{{ url_for('show_all_entry') }}"><button style="width: 100px; background-color: transparent ;border-radius: 10px; ">Go back</button></a>
+    </div>
+</body>
+</html>

@@ -31,7 +31,7 @@ def login():
     if request.method == 'POST':
         username = request.form['name']
         password = request.form['pass']
-        check_query="SELECT * FROM staff WHERE username = %s AND password=%s"
+        check_query="SELECT * FROM staff WHERE username = %s AND password = %s"
         values=(username,password)
         cursor.execute(check_query,values)
         allow = cursor.fetchone()
@@ -55,8 +55,7 @@ def signup():
         existing_user = cursor.fetchone()
 
         if existing_user:
-            error_msg = "Username already taken. Please choose another one."
-            return render_template("signup.html", error_msg=error_msg)
+            return render_template("signup.html", error_msg = "Username already taken. Please choose another one.")
         else:
             insert_query = "INSERT INTO staff (username, password) VALUES (%s, %s)"
             cursor.execute(insert_query, (username, password))
